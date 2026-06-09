@@ -9,6 +9,31 @@
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
     
+    // Модальное окно
+    const modal = document.getElementById('tagModal');
+    const modalClose = document.getElementById('modalClose');
+    
+    function showModal() {
+        if (modal) modal.style.display = 'flex';
+    }
+    
+    function closeModal() {
+        if (modal) modal.style.display = 'none';
+    }
+    
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    // Обработчики для кнопок "+N еще"
+    document.querySelectorAll('.tag-more').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showModal();
+        });
+    });
+    
     // Фильтрация по тегам
     let activeTag = null;
     const researchCards = document.querySelectorAll('.research-card:not(.callout-card)');
@@ -18,7 +43,6 @@
     
     function filterByTag(tag) {
         researchCards.forEach(card => {
-            // Получаем теги из data-атрибута и декодируем их
             const cardTagsJson = card.getAttribute('data-tags');
             if (!cardTagsJson) {
                 if (!tag) card.classList.remove('hidden');
@@ -40,7 +64,6 @@
             }
         });
         
-        // Обновляем активный класс у тегов
         tagLinks.forEach(link => {
             const linkTag = link.getAttribute('data-tag');
             if (linkTag === tag) {
@@ -50,7 +73,6 @@
             }
         });
         
-        // Обновляем информацию о фильтре
         let filterInfo = document.querySelector('.active-filter-info');
         if (!filterInfo) {
             filterInfo = document.createElement('div');
@@ -71,12 +93,10 @@
             filterInfo.innerHTML = '';
         }
         
-        // Перемещаем карточку-призыв в конец
         if (calloutCard && container.contains(calloutCard)) {
             container.appendChild(calloutCard);
         }
         
-        // Обновляем навигацию (скрываем ссылки на скрытые карточки)
         document.querySelectorAll('.nav-list a').forEach(link => {
             const targetId = link.getAttribute('href').substring(1);
             const targetCard = document.getElementById(targetId);
@@ -88,7 +108,6 @@
         });
     }
     
-    // Добавляем обработчики на теги
     tagLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -103,7 +122,6 @@
         });
     });
     
-    // Плавная прокрутка для якорей
     document.querySelectorAll('.nav-list a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
