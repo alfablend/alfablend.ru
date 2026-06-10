@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+    color: #111;
+    background: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.subhead {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.stats {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 130px;
+    padding: 1.5rem 1rem;
+    background: #fafafa;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.intro {
+    margin: 2rem 0;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 2rem 0 1rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.research-preview {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.research-preview h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.research-preview .preview-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.stat-line {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0;
+    color: #555;
+}
+
+.research-preview .excerpt {
+    font-size: 0.85rem;
+    color: #444;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.research-preview .excerpt strong {
+    font-weight: 700;
+    color: #111;
+}
+
+.research-preview .excerpt p {
+    margin-bottom: 0.5rem;
+}
+
+.preview-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #555;
+    cursor: pointer;
+    border: none;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+}
+
+a {
+    color: #111;
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.email-btn {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+/*                              (                            ) */
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.stat-badge:hover {
+    background: #e0e0e0;
+}
+
+.preview-tags {
+    margin: 0.75rem 0;
+}
+
+.preview-tags .tag {
+    font-size: 0.7rem;
+    background: #f5f5f5;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.preview-tags .tag-more {
+    font-size: 0.7rem;
+    color: #888;
+    background: #fafafa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+

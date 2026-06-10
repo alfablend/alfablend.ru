@@ -1,0 +1,257 @@
+.container {
+    display: flex;
+    gap: 3rem;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+    position: sticky;
+    top: 40px;
+}
+
+.research-card {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+}
+
+.no-results-message p {
+    margin-bottom: 0.5rem;
+}
+
+.no-results-message .button {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Отступы для текста внутри research-card */
+.research-card p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+}
+
+.research-card ul, 
+.research-card ol {
+    margin: 0.5rem 0 0.75rem 1.5rem;
+    padding-left: 0;
+}
+
+.research-card li {
+    margin: 0.25rem 0;
+}
+
+.research-card strong {
+    font-weight: 600;
+    color: #111;
+}
+
+.research-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #111;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+/* Нижний блок карточки — статистика и кнопка в одну линию */
+.research-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Контейнер статистики внутри footer */
+.research-footer .research-stats {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.research-meta {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Стили для бейджей статистики */
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #555;
+}
+
+/* Стили для тегов */
+.tag {
+    font-size: 0.75rem;
+    color: #555;
+    background: #f5f5f5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background: #e0e0e0;
+}
+
+/* Стили для ссылки отчёта */
+.report-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    text-decoration: none;
+    background: #e8f5e9;
+    color: #2e7d32;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.report-link:hover {
+    background: #c8e6c9;
+    color: #1b5e20;
+}
+
+/* Стили для навигации */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-list a {
+    font-size: 0.85rem;
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+
+.nav-list a:hover {
+    color: #111;
+    text-decoration: underline;
+}
+
+/* Стили для облака тегов */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-link {
+    font-size: 0.75rem;
+    color: #555;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tag-link:hover {
+    background: #e0e0e0;
+    color: #111;
+}
+
+/* Кнопка */
+.button {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: #333;
+}
+
+/* Заголовок страницы */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Делаем бейджи статистики кликабельными */
+.stat-badge {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stat-badge:hover {
+    background: #e0e0e0;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+	
+	.research-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .research-footer .report-link {
+        justify-content: center;
+    }
+}

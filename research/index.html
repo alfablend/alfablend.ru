@@ -1,413 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Исследования — Кейсы</title><style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследования — Кейсы</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+<link rel="stylesheet" href="/static/css/research.css">
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    line-height: 1.6;
-    color: #111;
-    background: #fff;
-}
-
-h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
-}
-
-.subtitle {
-    font-size: 0.9rem;
-    color: #888;
-    font-style: italic;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #eee;
-}
-
-.research-card {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-    position: relative;
-}
-
-.research-card:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.research-card.hidden {
-    display: none;
-}
-
-.research-card.featured {
-    border-left: 3px solid #c0c0c0;
-    padding-left: 1rem;
-}
-
-.research-card.featured::before {
-    content: "★";
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1rem;
-    opacity: 0.6;
-}
-
-.research-card h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    color: #111;
-}
-
-.research-card p {
-    margin: 0 0 0.75rem 0;
-    line-height: 1.5;
-    color: #333;
-}
-
-.research-card p:last-child {
-    margin-bottom: 0;
-}
-
-.research-card ul,
-.research-card ol {
-    margin: 0 0 0.75rem 0;
-    padding-left: 1.5rem;
-}
-
-.research-card li {
-    margin: 0.25rem 0;
-    color: #333;
-}
-
-.research-card strong {
-    font-weight: 600;
-    color: #111;
-}
-
-.research-card em {
-    font-style: italic;
-    color: #555;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0 1rem 0;
-    align-items: center;
-}
-
-.tag {
-    font-size: 0.75rem;
-    color: #555;
-    background: #f5f5f5;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.tag:hover {
-    background: #e0e0e0;
-}
-
-.tag-more {
-    font-size: 0.75rem;
-    color: #888;
-    background: transparent;
-    padding: 0.25rem 0.5rem;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 1px solid #eee;
-}
-
-.tag-more:hover {
-    background: #f5f5f5;
-    color: #111;
-    border-color: #ddd;
-}
-
-.research-stats {
-    margin: 0 0 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.stat-badge, .preview-stat {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    background: #f0f0f0;
-    color: #555;
-    cursor: pointer;
-    border: none;
-}
-
-.stat-badge:hover, .preview-stat:hover {
-    background: #e0e0e0;
-    color: #111;
-}
-
-.report-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    text-decoration: none;
-    background: #e8f5e9;
-    color: #2e7d32;
-}
-
-.report-link:hover {
-    background: #c8e6c9;
-    color: #1b5e20;
-    text-decoration: none;
-}
-
-.research-footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #f0f0f0;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #fff;
-    max-width: 400px;
-    width: 90%;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-}
-
-.modal-content h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.modal-content p {
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-.modal-content .email-btn {
-    display: inline-block;
-    background: #111;
-    color: #fff;
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
-}
-
-.research-meta {
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 0.5rem;
-}
-
-.research-meta p {
-    margin-bottom: 0.25rem;
-    color: #888;
-}
-
-.sidebar {
-    position: sticky;
-    top: 40px;
-    margin-bottom: 2rem;
-}
-
-.nav-card {
-    margin-bottom: 2rem;
-}
-
-.nav-list {
-    list-style: none;
-}
-
-.nav-list li {
-    margin-bottom: 0.5rem;
-}
-
-.nav-list a {
-    font-size: 0.85rem;
-    color: #555;
-    text-decoration: none;
-    display: block;
-    padding: 0.25rem 0;
-    cursor: pointer;
-}
-
-.nav-list a:hover {
-    color: #111;
-    text-decoration: underline;
-}
-
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag-link {
-    font-size: 0.75rem;
-    color: #555;
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    background: #f5f5f5;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.tag-link:hover {
-    background: #e0e0e0;
-    color: #111;
-}
-
-.tag-link.active {
-    background: #111;
-    color: #fff;
-}
-
-.active-filter-info {
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.subscribe-block {
-    background: #fafafa;
-    padding: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-}
-
-.subscribe-block p {
-    margin-bottom: 0.5rem;
-}
-
-.button {
-    display: inline-block;
-    background: #111;
-    color: #fff;
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-}
-
-.button:hover {
-    background: #333;
-    text-decoration: none;
-}
-
-.scroll-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: #111;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    font-size: 20px;
-}
-
-.scroll-top:hover {
-    background: #333;
-}
-
-.no-results-message {
-    padding: 2rem;
-    text-align: center;
-    color: #888;
-}
-
-@media (min-width: 768px) {
-    .container {
-        display: flex;
-        gap: 3rem;
-    }
-    .main-content {
-        flex: 2;
-    }
-    .sidebar {
-        flex: 1;
-    }
-}
-
-@media (max-width: 767px) {
-    body {
-        padding: 20px;
-    }
-    .sidebar {
-        position: static;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid #eee;
-    }
-}
-</style></head>
+</head>
 <body>
+    
 <div class="container">
     <div class="main-content">
         <h1>Исследования</h1>
         <div class="subtitle">рынок недвижимости · объекты культурного наследия · градостроительство</div>
+        
         <div id="researchContainer">
-<div class="research-card featured" data-tags='["Новая Голландия (остров)"]'><div id="research_70"></div><h2>Почему &quot;Новая Голландия&quot; выиграла суд с городом</h2><div class="research-stats"><span class="stat-badge">📄 2 документов</span> <span class="stat-badge">🏢 2 организаций</span></div><p><strong>Задача</strong>
+            
+                <div class="research-card featured" data-tags='["Новая Голландия (остров)"]'><div id="research_70"></div><h2>Почему &quot;Новая Голландия&quot; выиграла суд с городом</h2><p><strong>Задача</strong>
 Понять, почему инвестор «Новой Голландии» судился с городом из-за сроков, на каких условиях продлён договор и что это значит для других проектов ОКН.</p>
 <p><strong>Что сделано</strong>
 - Проанализировано решение Арбитражного суда (20 мая, иск полностью удовлетворён)
@@ -419,7 +30,9 @@ h1 {
 <p><strong>Инсайт</strong>
 Инвестор добился продления через суд. Город формально прав (объекты не готовы), но суд встал на сторону застройщика, учитывая санкции и социальную значимость. Это второй подряд случай в Петербурге, когда инвестор ОКН выигрывает у города по срокам.</p>
 <p><strong>Результат</strong>
-Публикация, которая фиксирует смену судебной практики по инвестдоговорам на объекты культурного наследия. Город не может диктовать сроки: суды учитывают особые обстоятельства и встают на сторону инвестора.</p><div class="tags"><span class="tag">Новая Голландия (остров)</span></div><div class="research-footer"><a href="https://www.dp.ru/a/2026/05/22/novaja-gollandija-viigrala" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>22.05.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div><div class="research-card featured" data-tags='["Дача Крона в Петергофе"]'><div id="research_72"></div><h2>Почему разрушается старинная дача в Петергофе</h2><div class="research-stats"><span class="stat-badge">📄 1 документов</span> <span class="stat-badge">🏢 3 организаций</span></div><p><strong>Задача</strong>
+Публикация, которая фиксирует смену судебной практики по инвестдоговорам на объекты культурного наследия. Город не может диктовать сроки: суды учитывают особые обстоятельства и встают на сторону инвестора.</p><div class="tags"><span class="tag">Новая Голландия (остров)</span></div><div class="research-footer"><div class="research-stats"><span class="stat-badge">📄 2 документов</span> <span class="stat-badge">🏢 2 организаций</span></div><a href="https://www.dp.ru/a/2026/05/22/novaja-gollandija-viigrala" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>22.05.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+            
+                <div class="research-card featured" data-tags='["Дача Крона в Петергофе"]'><div id="research_72"></div><h2>Почему разрушается старинная дача в Петергофе</h2><p><strong>Задача</strong>
 Понять, почему проект восстановления старинной деревянной дачи (памятник архитектуры) в Петергофе буксует, реальна ли реставрация за 1,6 млн рублей и кто взялся за проект.</p>
 <p><strong>Что сделано</strong>
 - Проанализирован конкурс СПбГУ: одна заявка от ООО «Зодчий» (связано с группой «Строй-Эксперт»), цена 1,6 млн рублей, срок 180 дней
@@ -430,7 +43,9 @@ h1 {
 <p><strong>Инсайт</strong>
 Бюджет проектирования в <strong>5 раз ниже рыночного</strong> (1,6 млн против 7–8 млн только за проект реставрации). Реальной реставрации не будет, пока не появится инвестор с сотнями миллионов рублей, а признаков этого нет.</p>
 <p><strong>Результат</strong>
-Публикация, которая вскрывает несоответствие между декларативными планами и реальными действиями. Показаны причины и обстоятельства разрушения памятника, дан прогноз развития ситуации.</p><div class="tags"><span class="tag">Дача Крона в Петергофе</span></div><div class="research-footer"><a href="https://www.dp.ru/a/2026/05/29/spbgu-nashjol-podrjadchika-dlja" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>29.05.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div><div class="research-card featured" data-tags='["Казармы лейб-гвардии Стрелкового артиллерийского дивизиона"]'><div id="research_78"></div><h2>Почему для казарм в Стрельне не находится инвестор</h2><div class="research-stats"><span class="stat-badge">📄 2 документов</span> <span class="stat-badge">🏢 1 организаций</span></div><p><strong>Задача</strong>
+Публикация, которая вскрывает несоответствие между декларативными планами и реальными действиями. Показаны причины и обстоятельства разрушения памятника, дан прогноз развития ситуации.</p><div class="tags"><span class="tag">Дача Крона в Петергофе</span></div><div class="research-footer"><div class="research-stats"><span class="stat-badge">📄 1 документов</span> <span class="stat-badge">🏢 3 организаций</span></div><a href="https://www.dp.ru/a/2026/05/29/spbgu-nashjol-podrjadchika-dlja" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>29.05.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+            
+                <div class="research-card featured" data-tags='["Казармы лейб-гвардии Стрелкового артиллерийского дивизиона"]'><div id="research_78"></div><h2>Почему для казарм в Стрельне не находится инвестор</h2><p><strong>Задача</strong>
 Выяснить, почему снова не сдали в аренду памятник архитектуры в Стрельне.</p>
 <p><strong>Что сделано</strong>
 - Проанализирован протокол КИО<br />
@@ -440,7 +55,9 @@ h1 {
 По версии КИО, единственный участник торгов <strong>уклонился</strong> от подписания договора после победы.<br />
 Теперь здание могут выставить на продажу.</p>
 <p><strong>Результат</strong>
-Публикация, которая объясняет, почему рынок не всегда заинтересован в подобных объектах даже по цене <strong>рубль за кв. метр</strong>.</p><div class="tags"><span class="tag">Казармы лейб-гвардии Стрелкового артиллерийского дивизиона</span></div><div class="research-footer"><a href="https://www.dp.ru/a/2026/06/08/pretendent-na-starinnie-kazarmi" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>08.06.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div><div class="research-card featured" data-tags='["Кресты (бывшая тюрьма, СИЗО)"]'><div id="research_77"></div><h2>С чего начнут реставрацию &quot;Крестов&quot;</h2><div class="research-stats"><span class="stat-badge">🏢 2 организаций</span></div><p><strong>Задача</strong>
+Публикация, которая объясняет, почему рынок не всегда заинтересован в подобных объектах даже по цене <strong>рубль за кв. метр</strong>.</p><div class="tags"><span class="tag">Казармы лейб-гвардии Стрелкового артиллерийского дивизиона</span></div><div class="research-footer"><div class="research-stats"><span class="stat-badge">📄 2 документов</span> <span class="stat-badge">🏢 1 организаций</span></div><a href="https://www.dp.ru/a/2026/06/08/pretendent-na-starinnie-kazarmi" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>08.06.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+            
+                <div class="research-card featured" data-tags='["Кресты (бывшая тюрьма, СИЗО)"]'><div id="research_77"></div><h2>С чего начнут реставрацию &quot;Крестов&quot;</h2><p><strong>Задача</strong>
 Понять, на какой стадии реально находится проект реконструкции «Крестов»: что уже согласовано, а что только обещано.</p>
 <p><strong>Что сделано</strong>
 - Найдена и проанализирована историко-культурная экспертиза по Дому надзирателей (опубликована в июне 2026 года, оформлена 28 мая)<br />
@@ -449,7 +66,9 @@ h1 {
 <p><strong>Инсайт</strong>
 На фоне громких подписаний соглашений на ПМЭФ продолжается рабочее проектирование. Согласован один небольшой корпус (<strong>Дом надзирателей, 635 м²</strong>). Согласование гостиницы отложено до осени.</p>
 <p><strong>Результат</strong>
-Публикация, отделяющая декларации от фактического хода реконструкции.</p><div class="tags"><span class="tag">Кресты (бывшая тюрьма, СИЗО)</span></div><div class="research-footer"><a href="https://www.dp.ru/a/2026/06/04/rekonstrukciju-krestov-v" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div><div class="research-card featured" data-tags='["Недостроенный аквапарк: свайные поля (недострой) на Литориновой ул. - ул. Шаврова (фундаменты аквапарка)"]'><div id="research_79"></div><h2>Что будет с недостроенным аквапарком в Петербурге</h2><div class="research-stats"><span class="stat-badge">📄 1 документов</span> <span class="stat-badge">🏢 1 организаций</span></div><p><strong>Задача</strong>
+Публикация, отделяющая декларации от фактического хода реконструкции.</p><div class="tags"><span class="tag">Кресты (бывшая тюрьма, СИЗО)</span></div><div class="research-footer"><div class="research-stats"><span class="stat-badge">🏢 2 организаций</span></div><a href="https://www.dp.ru/a/2026/06/04/rekonstrukciju-krestov-v" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+            
+                <div class="research-card featured" data-tags='["Недостроенный аквапарк: свайные поля (недострой) на Литориновой ул. - ул. Шаврова (фундаменты аквапарка)"]'><div id="research_79"></div><h2>Что будет с недостроенным аквапарком в Петербурге</h2><p><strong>Задача</strong>
 Понять, почему инвестор пытается обжаловать аукцион по недостроенному аквапарку, есть ли у него шансы и какие риски несёт оспаривание торгов.</p>
 <p><strong>Что сделано</strong>
 - Зафиксирован предмет спора: недострой (фундаменты) 29 тыс. м², цена 350 млн рублей, торги 10 июня
@@ -462,201 +81,48 @@ h1 {
 <p><strong>Инсайт</strong>
 Инвестор пытается остановить торги через суд, но уже получил отказ в обеспечительных мерах. Долг (43 млн) составляет 13% от цены актива (350 млн) — с точки зрения закона это соразмерно, поэтому шансы на отмену торгов невысоки. Даже если торги признают незаконными, это приведёт лишь к возврату сторон в исходное состояние.</p>
 <p><strong>Результат</strong>
-Публикация, которая показывает механизм оспаривания торгов по недострою. Инвестор ссылается на процедурные нарушения, но юрист оценивает шансы как низкие. История с 2011 года — классический случай, когда городской актив годами не может найти хозяина.</p><div class="tags"><span class="tag">Недостроенный аквапарк: свайные поля (недострой) на Литориновой ул. - ул. Шаврова (фундаменты аквапарка)</span></div><div class="research-footer"><a href="https://www.dp.ru/a/2026/06/10/aukcion-po-akvaparku-na-severe" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>10.06.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+Публикация, которая показывает механизм оспаривания торгов по недострою. Инвестор ссылается на процедурные нарушения, но юрист оценивает шансы как низкие. История с 2011 года — классический случай, когда городской актив годами не может найти хозяина.</p><div class="tags"><span class="tag">Недостроенный аквапарк: свайные поля (недострой) на Литориновой ул. - ул. Шаврова (фундаменты аквапарка)</span></div><div class="research-footer"><div class="research-stats"><span class="stat-badge">📄 1 документов</span> <span class="stat-badge">🏢 1 организаций</span></div><a href="https://www.dp.ru/a/2026/06/10/aukcion-po-akvaparku-na-severe" target="_blank" rel="noopener noreferrer" class="report-link">📄 Отчёт на сайте заказчика</a></div><div class="research-meta"><p>10.06.2026</p><p>По вопросам сотрудничества: hello@alfablend.ru</p></div></div>
+            
         </div>
     </div>
+    
     <div class="sidebar">
-        <div class="nav-card"><h3>Содержание</h3><ul class="nav-list"><li><a href="#research_70">Почему "Новая Голландия" выиграла суд с городом</a></li><li><a href="#research_72">Почему разрушается старинная дача в Петергофе</a></li><li><a href="#research_78">Почему для казарм в Стрельне не находится инвестор</a></li><li><a href="#research_77">С чего начнут реставрацию "Крестов"</a></li><li><a href="#research_79">Что будет с недостроенным аквапарком в Петербурге</a></li></ul></div>
-        <div class="nav-card"><h3>Теги</h3><div class="tag-cloud">
-<a href="#" class="tag-link">Дача Крона в Петергофе</a>
+        <div class="nav-card">
+            <h3>Содержание</h3>
+            <ul class="nav-list">
+                <li><a href="#research_70">Почему "Новая Голландия" выиграла суд с городом</a></li><li><a href="#research_72">Почему разрушается старинная дача в Петергофе</a></li><li><a href="#research_78">Почему для казарм в Стрельне не находится инвестор</a></li><li><a href="#research_77">С чего начнут реставрацию "Крестов"</a></li><li><a href="#research_79">Что будет с недостроенным аквапарком в Петербурге</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-card">
+            <h3>Теги</h3>
+            <div class="tag-cloud">
+                <a href="#" class="tag-link">Дача Крона в Петергофе</a>
 <a href="#" class="tag-link">Казармы лейб-гвардии Стрелкового артиллерийского дивизиона</a>
 <a href="#" class="tag-link">Кресты (бывшая тюрьма, СИЗО)</a>
 <a href="#" class="tag-link">Недостроенный аквапарк: свайные поля (недострой) на Литориновой ул. - ул. Шаврова (фундаменты аквапарка)</a>
 <a href="#" class="tag-link">Новая Голландия (остров)</a>
-
-        </div></div>
+            </div>
+        </div>
     </div>
 </div>
-<div style="text-align: center; margin: 2rem 0;"><a href="fresh/" class="button">→ Свежие исследования</a></div>
-<div id="tagModal" class="modal"><div class="modal-content"><span class="modal-close" id="modalClose">&times;</span><h3>Полный анализ данных</h3><p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p><a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a></div></div>
-<button class="scroll-top" id="scrollTop">↑</button>
-<script>
-(function() {
-    const scrollBtn = document.getElementById('scrollTop');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            scrollBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-        });
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+
+<div style="text-align: center; margin: 2rem 0;">
+    <a href="/fresh/" class="button">→ Свежие исследования</a>
+</div>
+
     
-    const modal = document.getElementById('tagModal');
-    const modalClose = document.getElementById('modalClose');
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
     
-    function showModal() {
-        if (modal) {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-    }
+    <script src="/static/js/main.js"></script>
     
-    function closeModal() {
-        if (modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-    }
-    
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (modal) modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal();
-    });
-    
-    // Модальное окно для всех кнопок
-    document.querySelectorAll('.tag-more, .stat-badge, .preview-stat, .tag').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            showModal();
-        });
-    });
-    
-    let activeTag = null;
-    const researchCards = document.querySelectorAll('.research-card');
-    const tagLinks = document.querySelectorAll('.tag-link');
-    const container = document.getElementById('researchContainer');
-    
-    function filterByTag(tag) {
-        let visibleCount = 0;
-        researchCards.forEach(card => {
-            const cardTagsJson = card.getAttribute('data-tags');
-            if (!cardTagsJson) {
-                if (!tag) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-                return;
-            }
-            try {
-                const tagsArray = JSON.parse(cardTagsJson);
-                if (!tag || tagsArray.includes(tag)) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            } catch(e) {
-                if (!tag) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // Подсветка активного тега
-        tagLinks.forEach(link => {
-            const linkTag = link.textContent.trim();
-            if (linkTag === tag) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-        
-        // Информация о фильтре
-        let filterInfo = document.querySelector('.active-filter-info');
-        if (!filterInfo && container && container.parentNode) {
-            filterInfo = document.createElement('div');
-            filterInfo.className = 'active-filter-info';
-            container.parentNode.insertBefore(filterInfo, container);
-        }
-        if (filterInfo) {
-            if (tag) {
-                filterInfo.innerHTML = 'Показаны исследования по тегу "' + tag + '" <a href="#" id="clearFilter" style="margin-left: 0.5rem;">(сбросить)</a>';
-                const clearLink = document.getElementById('clearFilter');
-                if (clearLink) {
-                    clearLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        filterByTag(null);
-                        activeTag = null;
-                    });
-                }
-            } else {
-                filterInfo.innerHTML = '';
-            }
-        }
-        
-        // Сообщение "не найдено"
-        let noResultsMsg = document.querySelector('.no-results-message');
-        if (visibleCount === 0 && researchCards.length > 0) {
-            if (!noResultsMsg) {
-                noResultsMsg = document.createElement('div');
-                noResultsMsg.className = 'no-results-message';
-                noResultsMsg.innerHTML = 'Исследований с таким тегом не найдено';
-                if (container && container.parentNode) {
-                    container.parentNode.insertBefore(noResultsMsg, container.nextSibling);
-                }
-            }
-        } else if (noResultsMsg) {
-            noResultsMsg.remove();
-        }
-    }
-    
-    // Навигация по якорям
-    const navLinks = document.querySelectorAll('.nav-list a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const hash = this.getAttribute('href');
-            if (hash && hash !== '#') {
-                const targetElement = document.querySelector(hash);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    history.pushState(null, null, hash);
-                }
-            }
-        });
-    });
-    
-    if (window.location.hash) {
-        const targetElement = document.querySelector(window.location.hash);
-        if (targetElement) {
-            setTimeout(function() {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        }
-    }
-    
-    // Обработчики для тегов - ИСПРАВЛЕНО
-    if (tagLinks.length > 0) {
-        tagLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tag = this.textContent.trim();
-                if (tag) {
-                    if (activeTag === tag) {
-                        // Если тот же тег - сбрасываем фильтр
-                        filterByTag(null);
-                        activeTag = null;
-                    } else {
-                        // Иначе фильтруем по новому тегу
-                        filterByTag(tag);
-                        activeTag = tag;
-                    }
-                }
-            });
-        });
-    }
-})();
-</script>
 </body>
 </html>

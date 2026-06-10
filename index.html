@@ -3,292 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вадим Кузьмицкий — Аналитика данных, исследования</title>
-    <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    line-height: 1.6;
-    color: #111;
-    background: #fff;
-}
-
-h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-}
-
-.subhead {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #eee;
-}
-
-.stats {
-    display: flex;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
-
-.stat-card {
-    flex: 1;
-    min-width: 130px;
-    padding: 1.5rem 1rem;
-    background: #fafafa;
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #111;
-    line-height: 1.2;
-    margin-bottom: 0.25rem;
-}
-
-.stat-label {
-    font-size: 0.7rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-
-.intro {
-    margin: 2rem 0;
-}
-
-.intro p {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.section-title {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin: 2rem 0 1rem 0;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-}
-
-.research-preview {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.research-preview h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.research-preview .preview-footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: center;
-    margin: 0.5rem 0;
-}
-
-.stat-line {
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.3rem 0;
-    color: #555;
-}
-
-.research-preview .excerpt {
-    font-size: 0.85rem;
-    color: #444;
-    margin: 0.5rem 0;
-    line-height: 1.5;
-}
-
-.research-preview .excerpt strong {
-    font-weight: 700;
-    color: #111;
-}
-
-.research-preview .excerpt p {
-    margin-bottom: 0.5rem;
-}
-
-.preview-stat {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    background: #f0f0f0;
-    color: #555;
-    cursor: pointer;
-    border: none;
-}
-
-footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #eee;
-    font-size: 0.8rem;
-    color: #888;
-    text-align: center;
-}
-
-a {
-    color: #111;
-    text-decoration: underline;
-}
-
-.button {
-    display: inline-block;
-    background: #111;
-    color: #fff;
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #fff;
-    max-width: 400px;
-    width: 90%;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
-}
-
-.email-btn {
-    display: inline-block;
-    background: #111;
-    color: #fff;
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-}
-</style>
+    <title>Вадим Кузьмицкий — Аналитик данных</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
 </head>
 <body>
-
-<h1>Вадим Кузьмицкий</h1>
-<div class="subhead">Аналитик данных, исследователь — рынок недвижимости, объекты культурного наследия, градостроительство</div>
-
-<div class="stats">
-    <div class="stat-card"><div class="stat-number">8</div><div class="stat-label">исследований</div></div>
-    <div class="stat-card"><div class="stat-number">13</div><div class="stat-label">объектов</div></div>
-    <div class="stat-card"><div class="stat-number">33</div><div class="stat-label">документов</div></div>
-    <div class="stat-card"><div class="stat-number">11</div><div class="stat-label">организаций</div></div>
-    <div class="stat-card"><div class="stat-number">29</div><div class="stat-label">событий</div></div>
-</div>
-
-<div class="intro">
-    <p>Более 10 лет в деловых СМИ Петербурга. Специализируюсь на сборе, структурировании и анализе данных из открытых источников (ОСИНТ).</p>
-    <p>Каждое исследование опирается на официальные документы, данные организаций и хронологию событий.</p>
-</div>
-
-<h2 class="section-title">Примеры исследований</h2>
-
-<div class="research-preview">
-    <h3>Как будет финансироваться строительство кампуса СПбГУ</h3>
-    <div class="excerpt"><p><strong>Задача</strong>
+    
+<div class="container">
+    <h1>Вадим Кузьмицкий</h1>
+    <div class="subhead">Аналитик данных, исследователь — рынок недвижимости, объекты культурного наследия, градостроительство</div>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">исследований</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">13</div>
+            <div class="stat-label">объектов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">33</div>
+            <div class="stat-label">документов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">11</div>
+            <div class="stat-label">организаций</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">29</div>
+            <div class="stat-label">событий</div>
+        </div>
+    </div>
+    
+    <div class="intro">
+        <p>Более 10 лет в деловых СМИ Петербурга. Специализируюсь на сборе, структурировании и анализе данных из открытых источников (ОСИНТ).</p>
+        <p>Каждое исследование опирается на официальные документы, данные организаций и хронологию событий.</p>
+    </div>
+    
+    <h2 class="section-title">Примеры исследований</h2>
+    
+    
+    <div class="research-preview">
+        <h3>Как будет финансироваться строительство кампуса СПбГУ</h3>
+        <div class="excerpt"><p><strong>Задача</strong>
 Понять, как СПбГУ собирается финансировать строительство кампуса под Пушкином (59 млрд рублей внебюджетных средств), за счёт чего и какие риски сопровождают эту модель.</p>
 <p><strong>Что сделано</strong>
 - Получены данные от «Дом.РФ»: особняк Штиглица выставят на торги в IV квартале 2026 года (оценка — 832 млн рублей)
 - Приведена финансовая модель: 120 млрд общая...</p></p></div>
-    <div class="preview-footer">
-        <span class="stat-line">📄 17 документов · 🏢 4 организаций · 📅 28 событий</span>
-        <span class="preview-stat">📄 Получить полный отчёт</span>
+		<div class="preview-tags"><div class="tags"><span class="tag">Дом Штиглица А.Л. (дворец Великого князя Павла Александровича)</span><span class="tag">Кампус СПбГУ в Пушкинском районе</span><span class="tag-more">+4 ещё</span></div></div>
+        <div class="preview-footer">
+            <span class="stat-line"><div class="research-stats"><span class="stat-badge">📄 17 документов</span> <span class="stat-badge">🏢 4 организаций</span> <span class="stat-badge">📅 28 событий</span></div></span>
+            <span class="preview-stat">📄 Получить полный отчёт</span>
+        </div>
     </div>
-</div>
-
-<div class="research-preview">
-    <h3>Как приходят в упадок здания вне охранных зон</h3>
-    <div class="excerpt"><p><strong>Задача</strong>
+    
+    <div class="research-preview">
+        <h3>Как приходят в упадок здания вне охранных зон</h3>
+        <div class="excerpt"><p><strong>Задача</strong>
 Понять, почему Дом отдыха паровозных бригад у станции Сортировочная не могут продать больше 7 лет, кто отвечает за его состояние и каковы перспективы этого здания.</p>
 <p><strong>Что сделано</strong>
 - Проанализирован аукцион КИО: 57 млн рублей за 4,2 тыс. м², аукцион намечен на 24 июня
 - Отслежена история попыток продажи: январь 2019 — 49,3 млн рублей, заявок не было
 -...</p></p></div>
-    <div class="preview-footer">
-        <span class="stat-line">📄 6 документов · 📅 1 событий</span>
-        <span class="preview-stat">📄 Получить полный отчёт</span>
+		<div class="preview-tags"><div class="tags"><span class="tag">Дом для отдыха паровозных бригад на Южном шоссе (у Сортировочной)</span></div></div>
+        <div class="preview-footer">
+            <span class="stat-line"><div class="research-stats"><span class="stat-badge">📄 6 документов</span> <span class="stat-badge">📅 1 событий</span></div></span>
+            <span class="preview-stat">📄 Получить полный отчёт</span>
+        </div>
     </div>
-</div>
-
-<div class="research-preview">
-    <h3>Почему в Петербурге пока не заработала программа льготного кредитования ОКН</h3>
-    <div class="excerpt"><p><strong>Задача</strong>
+    
+    <div class="research-preview">
+        <h3>Почему в Петербурге пока не заработала программа льготного кредитования ОКН</h3>
+        <div class="excerpt"><p><strong>Задача</strong>
 Понять, почему программа льготного кредитования реставрации ОКН пока не заработала в Петербурге в полную силу, в чем причины и есть ли перспективы.</p>
 <p><strong>Что сделано</strong>
 - Получены данные от оператора программы («Дом.РФ»): 20 объектов в 13 регионах, в Петербурге — 1
 - Приведена статистика: почти 5 млрд рублей выдано по всей России, 150 заявок на...</p></p></div>
-    <div class="preview-footer">
-        <span class="stat-line">📄 4 документов · 🏢 1 организаций</span>
-        <span class="preview-stat">📄 Получить полный отчёт</span>
+		<div class="preview-tags"><div class="tags"><span class="tag">Дворцовые конюшни (они же Готические конюшни, Императорские конюшни, Петергоф)</span></div></div>
+        <div class="preview-footer">
+            <span class="stat-line"><div class="research-stats"><span class="stat-badge">📄 4 документов</span> <span class="stat-badge">🏢 1 организаций</span></div></span>
+            <span class="preview-stat">📄 Получить полный отчёт</span>
+        </div>
     </div>
+    
+    
+    <p><a href="research/" class="button">> Смотреть все исследования</a></p>
+    
+    <footer>
+        <p>Связаться: <a href="mailto:hello@alfablend.ru">hello@alfablend.ru</a></p>
+    </footer>
 </div>
 
-<p><a href="research/" class="button">→ Смотреть все исследования</a></p>
-<footer><p>Связаться: <a href="mailto:hello@alfablend.ru">hello@alfablend.ru</a></p></footer>
-<div id="tagModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" id="modalClose">&times;</span>
-        <h3>Полный анализ данных</h3>
-        <p>Чтобы получить полный отчёт с полными тезисами и аналитикой,<br>напишите нам на почту.</p>
-        <a href="mailto:hello@alfablend.ru?subject=Запрос%20полного%20отчёта" class="email-btn">hello@alfablend.ru</a>
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
     </div>
-</div>
-<script>
-    (function() {
-        const modal = document.getElementById('tagModal');
-        const modalClose = document.getElementById('modalClose');
-        function showModal() { if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } }
-        function closeModal() { if (modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } }
-        if (modalClose) modalClose.addEventListener('click', closeModal);
-        if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.querySelectorAll('.preview-stat').forEach(btn => {
-            btn.addEventListener('click', (e) => { e.preventDefault(); showModal(); });
-        });
-    })();
-</script>
+    
+    <script src="/static/js/main.js"></script>
+    
 </body>
 </html>
