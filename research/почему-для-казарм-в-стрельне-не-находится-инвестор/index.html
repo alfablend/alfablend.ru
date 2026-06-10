@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почему для казарм в Стрельне не находится инвестор — Исследование</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+<link rel="stylesheet" href="/static/css/research.css">
+
+</head>
+<body>
+    
+<div class="research-detail">
+    <div class="back-link-wrapper">
+        <a href="/research/" class="back-link">← Все исследования</a>
+    </div>
+    
+    <h1>Почему для казарм в Стрельне не находится инвестор</h1>
+    
+    
+    <div class="research-date">
+        08.06.2026
+    </div>
+    
+    
+    <div class="research-full">
+        <p><strong>Задача</strong>
+Выяснить, почему снова не сдали в аренду памятник архитектуры в Стрельне.</p>
+<p><strong>Что сделано</strong>
+- Проанализирован протокол КИО<br />
+- Отслежена судьба предыдущего арендатора (суды)<br />
+- Изучены условия программы <strong>«Рубль за метр»</strong></p>
+<p><strong>Инсайт</strong>
+По версии КИО, единственный участник торгов <strong>уклонился</strong> от подписания договора после победы.<br />
+Теперь здание могут выставить на продажу.</p>
+<p><strong>Результат</strong>
+Публикация, которая объясняет, почему рынок не всегда заинтересован в подобных объектах даже по цене <strong>рубль за кв. метр</strong>.</p>
+    </div>
+    
+    <div class="tags-section">
+        <h3>Объекты исследования</h3>
+        <div class="tags"><span class="tag">Казармы лейб-гвардии Стрелкового артиллерийского дивизиона</span></div>
+    </div>
+    
+    <div class="stats-section">
+        <h3>Статистика</h3>
+        <div class="research-stats"><span class="stat-badge">📄 2 документов</span> <span class="stat-badge">🏢 1 организаций</span></div>
+    </div>
+    
+    <div class="why-me">
+        <h3>Почему стоит заказать исследование у нас?</h3>
+        <ul>
+            <li>✅ Работа с открытыми источниками и собственными архивами (OSINT)</li>
+            <li>✅ Структурированный отчёт: документы + организации + события</li>
+            <li>✅ Знание рынков, предметная экспертиза</li>
+            <li>✅ Опыт более 10 лет
+			<li>✅ Конкретные результаты (пример отчёта — ниже)</li>
+        </ul>
+    </div>
+	<div class="action-buttons">
+        
+        <a href="https://www.dp.ru/a/2026/06/08/pretendent-na-starinnie-kazarmi" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            📄 Отчёт на сайте заказчика
+        </a>
+        
+        
+        <button class="btn btn-secondary" id="orderResearchBtn">
+            📋 Заказать своё исследование
+        </button>
+    </div>
+</div>
+
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    
+<script>
+// Только кнопки заказа исследования
+document.querySelectorAll('#orderResearchBtn, #orderResearchBtn2').forEach(btn => {
+    if (btn) {
+        btn.addEventListener('click', function() {
+            const title = "\u041f\u043e\u0447\u0435\u043c\u0443 \u0434\u043b\u044f \u043a\u0430\u0437\u0430\u0440\u043c \u0432 \u0421\u0442\u0440\u0435\u043b\u044c\u043d\u0435 \u043d\u0435 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0438\u043d\u0432\u0435\u0441\u0442\u043e\u0440";
+            const subject = encodeURIComponent('Заказ исследования: ' + title);
+            window.location.href = `mailto:hello@alfablend.ru?subject=${subject}`;
+        });
+    }
+});
+</script>
+
+</body>
+</html>

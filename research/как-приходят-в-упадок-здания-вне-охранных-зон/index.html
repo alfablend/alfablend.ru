@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как приходят в упадок здания вне охранных зон — Исследование</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+<link rel="stylesheet" href="/static/css/research.css">
+
+</head>
+<body>
+    
+<div class="research-detail">
+    <div class="back-link-wrapper">
+        <a href="/research/" class="back-link">← Все исследования</a>
+    </div>
+    
+    <h1>Как приходят в упадок здания вне охранных зон</h1>
+    
+    
+    <div class="research-date">
+        25.05.2026
+    </div>
+    
+    
+    <div class="research-full">
+        <p><strong>Задача</strong>
+Понять, почему Дом отдыха паровозных бригад у станции Сортировочная не могут продать больше 7 лет, кто отвечает за его состояние и каковы перспективы этого здания.</p>
+<p><strong>Что сделано</strong>
+- Проанализирован аукцион КИО: 57 млн рублей за 4,2 тыс. м², аукцион намечен на 24 июня
+- Отслежена история попыток продажи: январь 2019 — 49,3 млн рублей, заявок не было
+- Выяснена позиция Жилищного агентства Невского района: дальнейший ремонт нецелесообразен, крыша разрушена
+- Проведено сравнение с зданием-близнецом: Дом отдыха кондукторских бригад отремонтирован и используется РЖД
+- Приведён юридический контекст (на примере дома Лялевича): у государства нет обязанности продавать объекты
+- Направлен запрос в КИО (срок ответа не истёк на момент публикации)</p>
+<p><strong>Инсайт</strong>
+Здание не охраняется государством, но и продать его не могут 7 лет. Город формально выполняет процедуру (консервация, торги), но не демонстрирует заинтересованности в результате: ремонт крыши признан нецелесообразным. Пока здание стоит без крыши и горит. Город пытается продать постройку за 57 млн.</p>
+<p><strong>Результат</strong>
+Публикация, которая показывает механизм медленного упадка исторического здания вне охранных зон. Государство не обязано его спасать, продать не может, содержать не хочет. Остаётся только ждать разрушения или редких инвесторов, для которых восстановление таких построек значимо.</p>
+    </div>
+    
+    <div class="tags-section">
+        <h3>Объекты исследования</h3>
+        <div class="tags"><span class="tag">Дом для отдыха паровозных бригад на Южном шоссе (у Сортировочной)</span></div>
+    </div>
+    
+    <div class="stats-section">
+        <h3>Статистика</h3>
+        <div class="research-stats"><span class="stat-badge">📄 6 документов</span> <span class="stat-badge">📅 1 событий</span></div>
+    </div>
+    
+    <div class="why-me">
+        <h3>Почему стоит заказать исследование у нас?</h3>
+        <ul>
+            <li>✅ Работа с открытыми источниками и собственными архивами (OSINT)</li>
+            <li>✅ Структурированный отчёт: документы + организации + события</li>
+            <li>✅ Знание рынков, предметная экспертиза</li>
+            <li>✅ Опыт более 10 лет
+			<li>✅ Конкретные результаты (пример отчёта — ниже)</li>
+        </ul>
+    </div>
+	<div class="action-buttons">
+        
+        <a href="https://www.dp.ru/a/2026/05/25/dom-otdiha-parovoznih-brigad" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            📄 Отчёт на сайте заказчика
+        </a>
+        
+        
+        <button class="btn btn-secondary" id="orderResearchBtn">
+            📋 Заказать своё исследование
+        </button>
+    </div>
+</div>
+
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    
+<script>
+// Только кнопки заказа исследования
+document.querySelectorAll('#orderResearchBtn, #orderResearchBtn2').forEach(btn => {
+    if (btn) {
+        btn.addEventListener('click', function() {
+            const title = "\u041a\u0430\u043a \u043f\u0440\u0438\u0445\u043e\u0434\u044f\u0442 \u0432 \u0443\u043f\u0430\u0434\u043e\u043a \u0437\u0434\u0430\u043d\u0438\u044f \u0432\u043d\u0435 \u043e\u0445\u0440\u0430\u043d\u043d\u044b\u0445 \u0437\u043e\u043d";
+            const subject = encodeURIComponent('Заказ исследования: ' + title);
+            window.location.href = `mailto:hello@alfablend.ru?subject=${subject}`;
+        });
+    }
+});
+</script>
+
+</body>
+</html>

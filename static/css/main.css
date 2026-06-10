@@ -244,3 +244,431 @@ a {
     display: inline-block;
 }
 
+/* ===== ДЕТАЛЬНАЯ СТРАНИЦА ИССЛЕДОВАНИЯ ===== */
+
+/* Основной контейнер */
+.research-detail {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Все прямые потомки — блочные */
+.research-detail > * {
+    display: block;
+    width: 100%;
+}
+
+.back-link-wrapper {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.back-link {
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: #111;
+}
+
+.research-detail h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.research-date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.research-full {
+    margin: 2rem 0;
+    line-height: 1.6;
+    width: 100%;
+}
+
+.research-full p {
+    margin-bottom: 1rem;
+}
+
+.research-full strong {
+    font-weight: 600;
+    color: #111;
+}
+
+/* Блок тегов */
+.tags-section {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.tags-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Блок статистики */
+.stats-section {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.stats-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Блок кнопок */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #111;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.btn-secondary:hover {
+    background: #c8e6c9;
+    transform: translateY(-2px);
+}
+
+/* Блок "Почему я" */
+.why-me {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #fafafa;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.why-me h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.why-me ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.why-me li {
+    margin: 0.5rem 0;
+}
+
+.why-me .btn {
+    margin-top: 1rem;
+}
+
+/* Теги */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* ===== СТРАНИЦА КАТАЛОГА ИССЛЕДОВАНИЙ ===== */
+
+/* Только для каталога — добавляем класс research-catalog-page */
+.research-catalog-page.container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Обычный контейнер (для главной и других страниц) */
+.container {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+    position: sticky;
+    top: 40px;
+}
+
+.research-card {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.research-card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #111;
+}
+
+.research-card h2 a {
+    text-decoration: none;
+    color: #111;
+}
+
+.research-card h2 a:hover {
+    text-decoration: underline;
+}
+
+.research-card .excerpt {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.research-card .excerpt p {
+    margin-bottom: 0.5rem;
+}
+
+.research-card .excerpt strong {
+    font-weight: 700;
+    color: #111;
+}
+
+/* Футер карточки */
+.research-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.research-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Кнопка "> Тезисы" */
+.details-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: #555;
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+}
+
+.details-link:hover {
+    background: #e0e0e0;
+    color: #111;
+}
+
+/* Теги в каталоге */
+.preview-tags {
+    margin: 0.75rem 0;
+}
+
+.preview-tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.preview-tags .tag {
+    font-size: 0.7rem;
+    background: #f5f5f5;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.preview-tags .tag-more {
+    font-size: 0.7rem;
+    color: #888;
+    background: #fafafa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Навигация в сайдбаре */
+.nav-card {
+    margin-bottom: 2rem;
+}
+
+.nav-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-link {
+    font-size: 0.75rem;
+    color: #555;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+    background: #e0e0e0;
+    color: #111;
+}
+
+.tag-link.active {
+    background: #111;
+    color: white;
+}
+
+/* Скрытые карточки при фильтрации */
+.research-card.hidden {
+    display: none;
+}
+
+/* Сообщение "не найдено" */
+.no-results-message {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    background: #fafafa;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+
+/* Стили для главной — ссылки и кнопки */
+.research-title-link {
+    text-decoration: none;
+    color: #111;
+}
+
+.research-title-link:hover {
+    text-decoration: underline;
+}
+
+.preview-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.details-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: #555;
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+}
+
+.details-link:hover {
+    background: #e0e0e0;
+    color: #111;
+}
+
+.preview-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+/* Для мобильных */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+    
+    .research-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .details-link {
+        text-align: center;
+        justify-content: center;
+    }
+}
+

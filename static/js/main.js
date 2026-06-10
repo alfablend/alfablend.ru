@@ -1,16 +1,5 @@
 (function() {
-    // Кнопка прокрутки вверх
-    const scrollBtn = document.getElementById('scrollTop');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            scrollBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-        });
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-    
-    // Модальное окно
+    // ===== МОДАЛЬНОЕ ОКНО =====
     const modal = document.getElementById('tagModal');
     const modalClose = document.getElementById('modalClose');
     
@@ -33,8 +22,8 @@
         if (e.target === modal) closeModal();
     });
     
-    // Открытие модального окна для всех кнопок
-    document.querySelectorAll('.tag-more, .stat-badge, .preview-stat, .tag').forEach(function(btn) {
+    // Открытие модалки при клике на бейджи статистики и теги
+    document.querySelectorAll('.stat-badge, .preview-stat, .tag-more').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -42,83 +31,47 @@
         });
     });
     
-    // Фильтрация по тегам (только на страницах с research-card)
-    let activeTag = null;
+    // ===== ФИЛЬТРАЦИЯ ПО ТЕГАМ =====
     const researchCards = document.querySelectorAll('.research-card');
     const tagLinks = document.querySelectorAll('.tag-link');
     const container = document.getElementById('researchContainer');
+    let activeTag = null;
     
     function filterByTag(tag) {
         let visibleCount = 0;
+        
         researchCards.forEach(card => {
             const cardTagsJson = card.getAttribute('data-tags');
             if (!cardTagsJson) {
-                if (!tag) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
+                card.classList.toggle('hidden', tag !== null);
+                if (!tag) visibleCount++;
                 return;
             }
+            
             try {
                 const tagsArray = JSON.parse(cardTagsJson);
-                if (!tag || tagsArray.includes(tag)) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
+                const shouldHide = tag !== null && !tagsArray.includes(tag);
+                card.classList.toggle('hidden', shouldHide);
+                if (!shouldHide) visibleCount++;
             } catch(e) {
-                if (!tag) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
+                card.classList.toggle('hidden', tag !== null);
+                if (!tag) visibleCount++;
             }
         });
         
         // Подсветка активного тега
         tagLinks.forEach(link => {
             const linkTag = link.textContent.trim();
-            if (linkTag === tag) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+            link.classList.toggle('active', linkTag === tag);
         });
         
-        // Информация о фильтре
-        let filterInfo = document.querySelector('.active-filter-info');
-        if (!filterInfo && container && container.parentNode) {
-            filterInfo = document.createElement('div');
-            filterInfo.className = 'active-filter-info';
-            container.parentNode.insertBefore(filterInfo, container);
-        }
-        if (filterInfo) {
-            if (tag) {
-                filterInfo.innerHTML = 'Показаны исследования по тегу "' + tag + '" <a href="#" id="clearFilter" style="margin-left: 0.5rem;">(сбросить)</a>';
-                const clearLink = document.getElementById('clearFilter');
-                if (clearLink) {
-                    clearLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        filterByTag(null);
-                        activeTag = null;
-                    });
-                }
-            } else {
-                filterInfo.innerHTML = '';
-            }
-        }
-        
-        // Сообщение "не найдено"
+        // Показываем/скрываем сообщение "не найдено"
         let noResultsMsg = document.querySelector('.no-results-message');
-        if (visibleCount === 0 && researchCards.length > 0) {
+        if (visibleCount === 0 && researchCards.length > 0 && tag) {
             if (!noResultsMsg) {
                 noResultsMsg = document.createElement('div');
                 noResultsMsg.className = 'no-results-message';
-                noResultsMsg.innerHTML = 'Исследований с таким тегом не найдено';
+                noResultsMsg.innerHTML = '📭 Исследований с таким тегом не найдено';
                 if (container && container.parentNode) {
                     container.parentNode.insertBefore(noResultsMsg, container.nextSibling);
                 }
@@ -128,50 +81,23 @@
         }
     }
     
-    // Навигация по якорям
-    const navLinks = document.querySelectorAll('.nav-list a');
-    navLinks.forEach(link => {
+    // Вешаем обработчики на теги
+    tagLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const hash = this.getAttribute('href');
-            if (hash && hash !== '#') {
-                const targetElement = document.querySelector(hash);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    history.pushState(null, null, hash);
-                }
+            const tag = this.textContent.trim();
+            
+            if (activeTag === tag) {
+                // Сброс фильтра
+                filterByTag(null);
+                activeTag = null;
+            } else {
+                // Применяем фильтр
+                filterByTag(tag);
+                activeTag = tag;
             }
         });
     });
     
-    if (window.location.hash) {
-        const targetElement = document.querySelector(window.location.hash);
-        if (targetElement) {
-            setTimeout(function() {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        }
-    }
-    
-    // Обработчики для тегов
-    if (tagLinks.length > 0) {
-        tagLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tag = this.textContent.trim();
-                if (tag) {
-                    if (activeTag === tag) {
-                        filterByTag(null);
-                        activeTag = null;
-                    } else {
-                        filterByTag(tag);
-                        activeTag = tag;
-                    }
-                }
-            });
-        });
-    }
+    console.log('✅ Фильтрация тегов работает');
 })();
