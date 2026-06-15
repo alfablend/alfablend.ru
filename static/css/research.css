@@ -1,14 +1,8 @@
 /* ===== ДЕТАЛЬНАЯ СТРАНИЦА ИССЛЕДОВАНИЯ ===== */
 .research-detail {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-/* Все блоки должны быть вертикальными */
-.research-detail > * {
-    display: block;
-    width: 100%;
 }
 
 .back-link-wrapper {
@@ -29,7 +23,6 @@
 .research-detail h1 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    width: 100%;
 }
 
 .research-date {
@@ -38,83 +31,159 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
-    width: 100%;
 }
 
-.research-full {
+/* ===== ДВУХКОЛОНОЧНАЯ СТРУКТУРА ===== */
+.research-two-columns {
+    display: flex;
+    gap: 3rem;
     margin: 2rem 0;
-    line-height: 1.6;
-    width: 100%;
+    align-items: flex-start;
 }
 
-.research-full p {
-    margin-bottom: 1rem;
+.research-main {
+    flex: 2;
+    min-width: 0;
 }
 
-.research-full strong {
+.research-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+}
+
+/* Блоки в левой колонке */
+.research-block {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.research-block h2 {
+    font-size: 1.2rem;
     font-weight: 600;
+    margin: 0 0 0.75rem 0;
     color: #111;
 }
 
-/* Блок тегов */
+.block-content {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Блок "От автора" в правой колонке */
+.fromme-block {
+    background: #fafafa;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+.fromme-block h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+/* Весь текст в блоке "От автора" — курсивом */
+.fromme-block .block-content {
+    font-style: italic;
+    color: #555;
+}
+
+/* Подпись автора — обычным шрифтом (не курсив) */
+.fromme-block .author-signature {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-style: normal;
+    color: #555;
+}
+
+/* Теги */
 .tags-section {
-    margin: 2rem 0;
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
-    width: 100%;
+    margin-top: 1rem;
 }
 
 .tags-section h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
+    color: #555;
 }
 
-/* Блок статистики */
-.stats-section {
-    margin: 2rem 0;
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
-    width: 100%;
-}
-
-.stats-section h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-/* Контейнер статистики */
-.research-stats {
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-/* Блок кнопок */
+.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.75rem;
+    background: #f0f0f0;
+    color: #555;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: #e0e0e0;
+    color: #111;
+}
+
+/* Блок "Почему я" в правой колонке */
+.why-me {
+    background: #fafafa;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.why-me h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.why-me ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.why-me li {
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* Кнопки в правой колонке */
 .action-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem 0;
-    padding: 1.5rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     border-radius: 40px;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     border: none;
     transition: all 0.2s ease;
+    width: 100%;
 }
 
 .btn-primary {
@@ -137,52 +206,27 @@
     transform: translateY(-2px);
 }
 
-/* Блок "Почему я" */
-.why-me {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: #fafafa;
-    border-radius: 12px;
-    width: 100%;
+/* Статистика (бейджи) */
+.stats-section {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-.why-me h3 {
-    font-size: 1rem;
+.stats-section h3 {
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
 }
 
-.why-me ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-.why-me li {
-    margin: 0.5rem 0;
-}
-
-.why-me .btn {
-    margin-top: 1rem;
-}
-
-/* Теги */
-.tags {
+.research-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.tag {
-    font-size: 0.75rem;
-    color: #555;
-    background: #f5f5f5;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    cursor: pointer;
-    display: inline-block;
-}
-
-/* Бейджи статистики */
 .stat-badge {
     display: inline-flex;
     align-items: center;
@@ -193,23 +237,13 @@
     border-radius: 20px;
     background: #f0f0f0;
     color: #555;
-    cursor: pointer;
 }
 
 .stat-badge:hover {
     background: #e0e0e0;
 }
 
-
-/* Авторство */
-.research-author {
-    margin: 0.5rem 0 1.5rem 0;
-    font-size: 0.9rem;
-    color: #4a5568;
-}
-
-/* Футер */
-
+/* Футер каталога */
 .catalog-footer {
     margin-top: 3rem;
     padding: 1.5rem 0;
@@ -229,8 +263,28 @@
     text-decoration: underline;
 }
 
-.catalog-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .research-two-columns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .research-sidebar {
+        position: static;
+    }
+    
+    .action-buttons {
+        flex-direction: row;
+    }
+    
+    .btn {
+        width: auto;
+        flex: 1;
+    }
+}
+
+/* Скрываем старый авторский блок */
+.research-author {
+    display: none;
 }
