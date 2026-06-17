@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С чего начнут реставрацию «Крестов» — Исследование</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+<link rel="stylesheet" href="/static/css/research.css">
+
+</head>
+<body>
+    
+<div class="research-detail">
+    <div class="back-link-wrapper">
+        <a href="/research/" class="back-link">← Все исследования</a>
+    </div>
+    
+    <h1>С чего начнут реставрацию «Крестов»</h1>
+    
+    
+    
+    <!-- ДВУХКОЛОНОЧНАЯ СТРУКТУРА -->
+    <div class="research-two-columns">
+        <!-- Левая колонка: основной контент -->
+        <div class="research-main">
+            <!-- Блок ЗАДАЧА -->
+            
+            <div class="research-block">
+                <h2>Задача</h2>
+                <div class="block-content">Понять, на какой стадии находится проект реконструкии «Крестов» и какими объектами занимаются в первую очередь.</div>
+            </div>
+            
+            
+            <!-- Блок ЧТО СДЕЛАНО -->
+            
+            <div class="research-block">
+                <h2>Что сделано</h2>
+                <div class="block-content">На завершение проектирования первого корпуса указывают материалы историко-культурной экспертизы. Также получена информация от проектировщика (компания «Спецреставрация»), которая даёт более широкий контекст продвижения этого проекта.</div>
+            </div>
+            
+            
+            <!-- Блок ИНСАЙТ -->
+            
+            <div class="research-block">
+                <h2>Инсайт</h2>
+                <div class="block-content">Проектные работы начались не с гостиницы в основных корпусах (которую можно считать основной изюминкой будущего комплекса), а с офисов в небольших служебных зданиях. Дело в том, что согласований для них требуется меньше.</div>
+            </div>
+            
+            
+            <!-- Блок РЕЗУЛЬТАТ -->
+            
+            <div class="research-block">
+                <h2>Результат</h2>
+                <div class="block-content">Материал, который рассказывает о реальной проектной работе на фоне подписания соглашений на Петербургском международном экономическом форуме (ПМЭФ).</div>
+            </div>
+            
+            
+            <!-- БЛОК СТАТИСТИКИ (агрегация) -->
+            
+            <div class="stats-section">
+                <h3>Статистика исследования</h3>
+                <div class="research-stats">
+                    
+                    
+                    <span class="stat-badge">🏢 3 организаций</span>
+                    
+                    
+                </div>
+            </div>
+            
+            
+            <!-- Теги -->
+            
+            <div class="tags-section">
+                <h3>Объекты исследования</h3>
+                <div class="tags">
+                    
+                    <span class="tag">Кресты (бывшая тюрьма, СИЗО)</span>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Правая колонка: "От автора" и "Почему я" -->
+        <div class="research-sidebar">
+            
+            <div class="research-block fromme-block">
+                <h2>От автора</h2>
+                <div class="block-content">
+                    <p class="author-signature"><strong>Вадим Кузьмицкий</strong>, аналитик данных</p>
+                    Более выгодная ставка по программе льготного кредитования восстановления объектов культурного наследия (ОКН), 6 %, предусмотрена для гостиниц. На ПМЭФ заключили соглашение о намерениях по кредитованию стройки, но подробности обнародованы не были.
+                </div>
+            </div>
+            
+            
+            <div class="why-me">
+                <h3>Почему стоит заказать исследование?</h3>
+                <ul>
+                    <li>Работа с открытыми источниками и собственными архивами (OSINT)</li>
+                    <li>Структурированный отчёт: документы + организации + события</li>
+                    <li>Знание рынков, предметная экспертиза</li>
+                    <li>Опыт более 10 лет</li>
+                    <li>Конкретные результаты</li>
+                </ul>
+            </div>
+            
+            <!-- Кнопки -->
+            <div class="action-buttons">
+                
+                <a href="https://www.dp.ru/a/2026/06/04/rekonstrukciju-krestov-v" target="_blank" class="btn btn-primary">
+                    📄 Отчёт на сайте заказчика
+                </a>
+                
+                
+                <button class="btn btn-secondary" id="orderResearchBtn">
+                    📋 Заказать своё исследование
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    
+<script>
+document.getElementById('orderResearchBtn')?.addEventListener('click', function() {
+    const title = "\u0421 \u0447\u0435\u0433\u043e \u043d\u0430\u0447\u043d\u0443\u0442 \u0440\u0435\u0441\u0442\u0430\u0432\u0440\u0430\u0446\u0438\u044e \u00ab\u041a\u0440\u0435\u0441\u0442\u043e\u0432\u00bb";
+    const subject = encodeURIComponent('Заказ исследования: ' + title);
+    window.location.href = `mailto:hello@alfablend.ru?subject=${subject}`;
+});
+</script>
+
+</body>
+</html>
