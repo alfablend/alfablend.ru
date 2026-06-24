@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Вадим Кузьмицкий — Аналитика данных{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for_static('css/main.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
+    
+    <script src="{{ url_for_static('js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Вадим Кузьмицкий — Аналитик данных{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Вадим Кузьмицкий</h1>
+    <div class="subhead">Аналитик данных, исследователь — рынок недвижимости, объекты культурного наследия, градостроительство</div>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">{{ stats.research }}</div>
+            <div class="stat-label">исследований</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ stats.objects }}</div>
+            <div class="stat-label">объектов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ stats.docs }}</div>
+            <div class="stat-label">документов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ stats.organizations }}</div>
+            <div class="stat-label">организаций</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ stats.events }}</div>
+            <div class="stat-label">событий</div>
+        </div>
+    </div>
+    
+    <div class="intro">
+        <p>Более 10 лет в деловых СМИ Петербурга. Специализируюсь на сборе, структурировании и анализе данных из открытых источников (ОСИНТ).</p>
+        <p>Каждое исследование опирается на официальные документы, данные организаций и хронологию событий.</p>
+    </div>
+    
+    <h2 class="section-title">Примеры исследований</h2>
+    
+    {% for research in top_research %}
+    <div class="research-preview">
+        <h3>
+            <a href="/research/{{ research.slug }}/" class="research-title-link">
+                {{ research.title }}
+            </a>
+        </h3>
+        <div class="excerpt">
+            {% set preview_text = research.done or research.task or research.insight or research.result %}
+            {% if preview_text %}
+                {{ preview_text[:250] }}{% if preview_text|length > 250 %}...{% endif %}
+            {% else %}
+                <em>—</em>
+            {% endif %}
+        </div>
+        <div class="preview-tags">
+            <div class="tags">
+                {% for tag in research.tags[:2] %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+                {% if research.tags|length > 2 %}
+                <span class="tag-more">+{{ research.tags|length - 2 }} ещё</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="preview-footer">
+            <div class="preview-stats">
+                <div class="research-stats">
+                    {% if research.docs_count > 0 %}
+                    <span class="stat-badge">📄 {{ research.docs_count }} документов</span>
+                    {% endif %}
+                    {% if research.orgs_count > 0 %}
+                    <span class="stat-badge">🏢 {{ research.orgs_count }} организаций</span>
+                    {% endif %}
+                    {% if research.events_count > 0 %}
+                    <span class="stat-badge">📅 {{ research.events_count }} событий</span>
+                    {% endif %}
+                </div>
+            </div>
+            <a href="/research/{{ research.slug }}/" class="details-link">→ Тезисы</a>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <p><a href="research/" class="button">> Смотреть все исследования</a></p>
+    
+    <footer>
+        <p>Связаться: <a href="mailto:hello@alfablend.ru">hello@alfablend.ru</a></p>
+    </footer>
+</div>
+{% endblock %}
