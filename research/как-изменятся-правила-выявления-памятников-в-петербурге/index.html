@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как изменятся правила выявления памятников в Петербурге — Исследование</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    
+<link rel="stylesheet" href="/static/css/research.css">
+
+</head>
+<body>
+    
+<div class="research-detail">
+    <div class="back-link-wrapper">
+        <a href="/research/" class="back-link">← Все исследования</a>
+    </div>
+    
+    <h1>Как изменятся правила выявления памятников в Петербурге</h1>
+    
+    
+    <div class="research-date">
+        26.06.2026
+    </div>
+    
+    
+    <!-- ДВУХКОЛОНОЧНАЯ СТРУКТУРА -->
+    <div class="research-two-columns">
+        <!-- Левая колонка: основной контент -->
+        <div class="research-main">
+            <!-- Блок ЗАДАЧА -->
+            
+            <div class="research-block">
+                <h2>Задача</h2>
+                <div class="block-content">Понять, как принятые Законодательным собраниям поправки повлияют на возможность выявления новых объектов культурного наследия, и почему это вызывает опасения градозащитников.</div>
+            </div>
+            
+            
+            <!-- Блок ЧТО СДЕЛАНО -->
+            
+            <div class="research-block">
+                <h2>Что сделано</h2>
+                <div class="block-content">Проанализированы материалы заседаний Законодательного собрания, текст закона, позиции КГИОП, Минкультуры и депутатов. Получены комментарии «Живого города». </div>
+            </div>
+            
+            
+            <!-- Блок ИНСАЙТ -->
+            
+            <div class="research-block">
+                <h2>Инсайт</h2>
+                <div class="block-content">Значимые поправки утверждены не были (например та, что предполагала право вето Совета по сохранению культурного наследия на решения об отказе во включении здания в перечень памятников). Кроме того, не урегулированы случаи возможного конфликта интересов (когда сам заявитель заинтересован в реализации проекта застройки).</div>
+            </div>
+            
+            
+            <!-- Блок РЕЗУЛЬТАТ -->
+            
+            <div class="research-block">
+                <h2>Результат</h2>
+                <div class="block-content">Публикация о том, как новый закон, формально направленный против «административного спама», может создать новые риски и неопределённость.</div>
+            </div>
+            
+            
+            <!-- БЛОК СТАТИСТИКИ (агрегация) -->
+            
+            <div class="stats-section">
+                <h3>Статистика исследования</h3>
+                <div class="research-stats">
+                    
+                    <span class="stat-badge">📄 5 документов</span>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+            
+            <!-- Теги -->
+            
+        </div>
+        
+        <!-- Правая колонка: "От автора" и "Почему я" -->
+        <div class="research-sidebar">
+            
+            <div class="research-block fromme-block">
+                <h2>От автора</h2>
+                <div class="block-content">
+                    <p class="author-signature"><strong>Вадим Кузьмицкий</strong>, аналитик данных</p>
+                    Закон ограничивает подачу повторных заявлений по одному и тому же зданию, если не приложены новые существенные факты. Конкретные требования и порядок должны быть определены подзаконным актом, который вынесут на антикоррупционную экспертизу.
+                </div>
+            </div>
+            
+            
+            <div class="why-me">
+                <h3>Почему стоит заказать новое исследование?</h3>
+                <ul>
+                    <li>Работа с открытыми источниками и собственными архивами (OSINT)</li>
+                    <li>Структурированный отчёт: документы + организации + события</li>
+                    <li>Знание рынков, предметная экспертиза</li>
+                    <li>Опыт более 10 лет</li>
+                    <li>Конкретные результаты</li>
+                </ul>
+            </div>
+            
+            <!-- Кнопки -->
+            <div class="action-buttons">
+                
+                
+                <button class="btn btn-secondary" id="orderResearchBtn">
+                    📋 Заказать своё исследование
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- Модальное окно -->
+    <div id="tagModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Полный анализ данных</h3>
+            <p>Чтобы получить полную аналитику по этому исследованию<br>(все документы, организации и события),<br>напишите нам на почту.</p>
+            <a href="mailto:hello@alfablend.ru?subject=Запрос%20полной%20аналитики" class="email-btn">hello@alfablend.ru</a>
+        </div>
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    
+<script>
+document.getElementById('orderResearchBtn')?.addEventListener('click', function() {
+    const title = "\u041a\u0430\u043a \u0438\u0437\u043c\u0435\u043d\u044f\u0442\u0441\u044f \u043f\u0440\u0430\u0432\u0438\u043b\u0430 \u0432\u044b\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u043f\u0430\u043c\u044f\u0442\u043d\u0438\u043a\u043e\u0432 \u0432 \u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0435";
+    const subject = encodeURIComponent('Заказ исследования: ' + title);
+    window.location.href = `mailto:hello@alfablend.ru?subject=${subject}`;
+});
+</script>
+
+</body>
+</html>
